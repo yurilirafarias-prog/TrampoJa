@@ -1,13 +1,19 @@
-package model;
+package com.trampoja.api.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "freelancer")
 public class Freelancer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String cpf;
     private String telefone;
     private String email;
-    // campos com base no rf03
     private String resumo;
     private String habilidades;
     private String endereco;
@@ -101,4 +107,3 @@ public class Freelancer {
         this.valorHora = valorHora;
     }
 }
-

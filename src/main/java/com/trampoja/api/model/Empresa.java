@@ -1,15 +1,21 @@
-package model;
+package com.trampoja.api.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "empresa")
 public class Empresa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String cnpj;
     private String razaoSocial;
     private String endereco;
 
     public Empresa() {
-
     }
 
     public Empresa(Long id, String nome, String cnpj, String razaoSocial, String endereco) {
