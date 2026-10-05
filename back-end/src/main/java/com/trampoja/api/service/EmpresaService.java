@@ -19,7 +19,39 @@ public class EmpresaService {
         return empresaRepository.findAll();
     }
 
+    public Empresa getById(Long id){
+        return empresaRepository.findById(id)
+                .orElse(null);
+    }
+
     public Empresa create(Empresa empresa) {
         return empresaRepository.save(empresa);
+    }
+
+    public Empresa update(Long id, Empresa empresaAtualizado){
+
+        Empresa empresa = empresaRepository.findById(id)
+                .orElse(null);
+
+        if (empresa == null){
+            return null;
+        }
+
+        empresa.setNome(empresaAtualizado.getNome());
+        empresa.setCnpj(empresaAtualizado.getCnpj());
+        empresa.setRazaoSocial(empresaAtualizado.getRazaoSocial());
+        empresa.setEndereco(empresaAtualizado.getEndereco());
+
+        return empresaRepository.save(empresa);
+    }
+
+    public boolean delete(Long id){
+
+        if (!empresaRepository.existsById(id)){
+            return false;
+        }
+
+        empresaRepository.deleteById(id);
+        return true;
     }
 }
