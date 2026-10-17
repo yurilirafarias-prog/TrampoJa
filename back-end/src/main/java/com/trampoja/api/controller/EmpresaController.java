@@ -22,13 +22,13 @@ public class EmpresaController {
         return empresaService.getAll();
     }
 
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public ResponseEntity<Empresa> getById(@PathVariable Long id){
 
         Empresa empresa = empresaService.getById(id);
 
         if (empresa == null) {
-            return ResponseEntity.notfound().build();
+            return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(empresa);
@@ -47,7 +47,7 @@ public class EmpresaController {
         Empresa empresa = empresaService.update(id, empresaAtualizado);
 
         if (empresa == null ){
-            return ResponseEntity.notfound().build();
+            return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(empresa);
@@ -63,5 +63,5 @@ public class EmpresaController {
         }
 
         return ResponseEntity.noContent().build();
-    }  
+    }
 }
