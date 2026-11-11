@@ -1,9 +1,12 @@
 package com.trampoja.api.service;
 
+import com.trampoja.api.dto.LoginResponse;
+import com.trampoja.api.exception.CredenciaisInvalidasException;
 import com.trampoja.api.exception.EmailJaCadastradoException;
 import com.trampoja.api.model.Freelancer;
 import com.trampoja.api.repository.FreelancerRepository;
 import com.trampoja.api.security.JwtService;
+import jakarta.validation.Valid;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +14,8 @@ import java.util.List;
 
 @Service
 public class FreelancerService {
+
+    private static final String TIPO_USUARIO = "FREELANCER";
 
     private final FreelancerRepository freelancerRepository;
     private final PasswordEncoder passwordEncoder;
@@ -30,6 +35,19 @@ public class FreelancerService {
     public Freelancer getById(Long id) {
         return freelancerRepository.findById(id)
                 .orElse(null);
+    }
+
+    public LoginResponse login(@Valid Freelancer request) {
+        Freelancer freelancer = freelancerRepository.findByEmail(request.getEmail())
+                .orElseThrow(CredenciaisInvalidasException::new);
+
+        if (!passwordEncoder.matches(request.getSenha(), freelancer.getSenha())) {
+            throw new CredenciaisInvalidasException();
+        }
+
+        String token = jwtService.gerarToken(freelancer.getEmail(), freelancer.getId(), TIPO_USUARIO);
+
+        return new LoginResponse(token, TIPO_USUARIO, freelancer.getId(), freelancer.getNome(), freelancer.getEmail());
     }
 
     public Freelancer create(Freelancer freelancer) {

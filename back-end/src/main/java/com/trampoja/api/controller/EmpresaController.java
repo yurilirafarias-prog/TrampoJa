@@ -41,7 +41,6 @@ public class EmpresaController {
         return ResponseEntity.ok(empresa);
     }
 
-    // POST /empresa/login
     @PostMapping("/login")
     public ResponseEntity<?> loginEmpresa(@RequestBody @Valid LoginRequest request) {
         try {

@@ -1,9 +1,13 @@
 package com.trampoja.api.controller;
 
+import com.trampoja.api.dto.LoginRequest;
+import com.trampoja.api.dto.LoginResponse;
+import com.trampoja.api.exception.CredenciaisInvalidasException;
 import com.trampoja.api.exception.EmailJaCadastradoException;
 import com.trampoja.api.model.Empresa;
 import com.trampoja.api.model.Freelancer;
 import com.trampoja.api.service.FreelancerService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +39,18 @@ public class FreelancerController {
         }
 
         return ResponseEntity.ok(freelancer);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody @Valid Freelancer freelancer) {
+        try {
+            LoginResponse response = freelancerService.login(freelancer);
+            return ResponseEntity.ok(response);
+        } catch (CredenciaisInvalidasException e) {
+            return ResponseEntity
+                    .status(HttpStatus.UNAUTHORIZED)
+                    .body(e.getMessage());
+        }
     }
 
     @PostMapping("/register")
