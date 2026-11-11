@@ -1,5 +1,6 @@
 package com.trampoja.api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,15 +16,24 @@ public class Empresa {
     private String razaoSocial;
     private String endereco;
 
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @Column(nullable = false)
+    private String senha;
+
     public Empresa() {
     }
 
-    public Empresa(Long id, String nome, String cnpj, String razaoSocial, String endereco) {
+    public Empresa(Long id, String nome, String cnpj, String razaoSocial, String endereco, String email, String senha) {
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
         this.razaoSocial = razaoSocial;
         this.endereco = endereco;
+        this.email = email;
+        this.senha = senha;
     }
 
     public Long getId() {
@@ -64,5 +74,21 @@ public class Empresa {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
