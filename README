@@ -1,3 +1,59 @@
-O projeto TrampoJá! é um projeto acadêmico com a intenção de ajudar pessoas a conseguirem serviços freelancers e facilitar empresas na busca desses profissionais.
+O projeto TrampoJá! é um projeto integrador com a intenção de ajudar pessoas que desejam realizar trabalhos freelancers e empresas que desejam contratar esses profissionais. Como solução o projeto tem objetivo de criar uma plataforma web para que possa fazer essa conexão entre a empresa e os freelancers.
 
-Aqui neste repositório ficará registrado toda a parte de front end, back end e banco de dados.
+Entre algumas funções que serão aplicadas no projeto estão: • Cadastro de usuários freelancers e empresa. • Gerenciamento de Perfis. • Publicação e cadastramento de vagas freelancers. • Chat entre empresa e freelancer. • Avaliação mútua após o término do trabalho. • Contato com a administração do site.
+
+Os integrantes do projeto TrampoJá! são: •Gabriel Jum Iamashita •Rebeca Martins Caroba •Yuri Carneiro Leite
+
+Tecnologias e bibliotecas utilizadas.
+Entre as tecnologias usadas estão sendo utilizados: • Java • SpringBoot • PostgreeSql • Angular • Typescript • HTML • CSS • NodeJS • Apache Maven
+
+Para realizar a clonagem do projeto e executá-lo será necessário o uso de algumas tecnologias e instalação, dentre elas será necessário a instalação do Java, NodeJS, Editor de código fonte (como o VsCode), pgAdmin, NodeJs, ApacheMaven
+
+Após a instalação desses softwares poderá ser realizado a clonagem do github
+
+instalando ferramentas como o github desktop ou por meio do gitbash, sendo este último necessário usar o comando de git clone
+
+É necessário instalar as duas partes do projeto sendo uma parte o front-end e a outra o back-end
+
+para rodar a aplicação do back-end é necessário usar o comando inicial de mvn clean install
+
+após isso recomendemas ir em aplication.properties e modificar a senha
+de spring.datasource.password que inicialmente estará como 
+${DB_PASSWORD}
+
+Vamos conectá-lo ao pgAdmin
+
+vamos conectar ao usuário postgres (definido em aplication properties) e a sua senha definida
+
+Agora será necessário criar o banco de dados em Database, pressione o botão direito 
+e selecione Create > Database
+
+na nova janela no campo Database digite exatamente TrampoJa(importante digitar com as letras maiúsculas e minúsculas)
+
+feito isso voltamos ao nosso editor e insira o comando no terminal 
+
+mvn spring-boot:run
+
+agora podemos usar o Swagger para ler nossa documentação da API, aqui poderemos
+mexer com os dados do sistema, consultado, criando, modificando e excluindo novos usuários
+
+http://localhost:8080/swagger-ui/index.html
+
+Se deu tudo certo será possível fazer os métodos http para a Oportunidade, Freelancer e Empresa
+
+Para testar vá em post e clique em try it out, lembre-se de retirar o campo de id
+
+para modificar vá em put, para consultar use o get, e para excluir use o delete
+
+Para testar se o pgadmin está atualizando os dados
+vá em Databases > TrampoJa > Schemas > public > Tables
+
+clique com o botão direito sobre a tabela que deseja conferir, como por exemplo empresa
+
+selecione View/Edit Data > First100 Rows
+
+se der tudo certo os dados deverão aparecer na tela
+
+Para encerrar a API lembre-se de voltar ao terminal do código e pressionar Ctrl + C 
+
+Links das aplicações publicadas em deploy: https://front-end-trampo-ja.vercel.app/
