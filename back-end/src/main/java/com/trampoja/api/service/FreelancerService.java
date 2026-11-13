@@ -1,8 +1,10 @@
 package com.trampoja.api.service;
 
+import com.trampoja.api.dto.LoginRequest;
 import com.trampoja.api.dto.LoginResponse;
 import com.trampoja.api.exception.CredenciaisInvalidasException;
 import com.trampoja.api.exception.EmailJaCadastradoException;
+import com.trampoja.api.model.Empresa;
 import com.trampoja.api.model.Freelancer;
 import com.trampoja.api.repository.FreelancerRepository;
 import com.trampoja.api.security.JwtService;
@@ -37,7 +39,7 @@ public class FreelancerService {
                 .orElse(null);
     }
 
-    public LoginResponse login(@Valid Freelancer request) {
+    public LoginResponse login(LoginRequest request) {
         Freelancer freelancer = freelancerRepository.findByEmail(request.getEmail())
                 .orElseThrow(CredenciaisInvalidasException::new);
 

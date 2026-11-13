@@ -42,9 +42,9 @@ public class FreelancerController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody @Valid Freelancer freelancer) {
+    public ResponseEntity<?> login(@RequestBody @Valid LoginRequest request) {
         try {
-            LoginResponse response = freelancerService.login(freelancer);
+            LoginResponse response = freelancerService.login(request);
             return ResponseEntity.ok(response);
         } catch (CredenciaisInvalidasException e) {
             return ResponseEntity
