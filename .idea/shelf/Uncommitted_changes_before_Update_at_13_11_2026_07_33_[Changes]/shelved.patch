@@ -1,0 +1,39 @@
+Index: .idea/back-end Trampo Ja.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/back-end Trampo Ja.iml b/.idea/back-end Trampo Ja.iml
+new file mode 100644
+--- /dev/null	(date 1794562985711)
++++ b/.idea/back-end Trampo Ja.iml	(date 1794562985711)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1794562985748)
++++ b/.idea/modules.xml	(date 1794562985748)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/back-end Trampo Ja.iml" filepath="$PROJECT_DIR$/.idea/back-end Trampo Ja.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file

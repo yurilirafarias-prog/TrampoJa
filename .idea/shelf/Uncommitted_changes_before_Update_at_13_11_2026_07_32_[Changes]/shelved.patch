@@ -1,0 +1,85 @@
+Index: back-end/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>4.1.1</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>com.trampoja</groupId>\r\n\t<artifactId>trampoja-api</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<name/>\r\n\t<description/>\r\n\t<url/>\r\n\t<licenses>\r\n\t\t<license/>\r\n\t</licenses>\r\n\t<developers>\r\n\t\t<developer/>\r\n\t</developers>\r\n\t<scm>\r\n\t\t<connection/>\r\n\t\t<developerConnection/>\r\n\t\t<tag/>\r\n\t\t<url/>\r\n\t</scm>\r\n\t<properties>\r\n\t\t<java.version>21</java.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-actuator</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-validation</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-webmvc</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springdoc</groupId>\r\n\t\t\t<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>\r\n\t\t\t<version>3.1.0</version>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.postgresql</groupId>\r\n\t\t\t<artifactId>postgresql</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-actuator-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-validation-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-webmvc-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t</plugin>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.apache.maven.plugins</groupId>\r\n\t\t\t\t<artifactId>maven-compiler-plugin</artifactId>\r\n\t\t\t\t<executions>\r\n\t\t\t\t\t<execution>\r\n\t\t\t\t\t\t<id>default-compile</id>\r\n\t\t\t\t\t\t<phase>compile</phase>\r\n\t\t\t\t\t\t<goals>\r\n\t\t\t\t\t\t\t<goal>compile</goal>\r\n\t\t\t\t\t\t</goals>\r\n\t\t\t\t\t\t<configuration>\r\n\t\t\t\t\t\t\t<annotationProcessorPaths>\r\n\t\t\t\t\t\t\t\t<path>\r\n\t\t\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t\t\t</path>\r\n\t\t\t\t\t\t\t</annotationProcessorPaths>\r\n\t\t\t\t\t\t</configuration>\r\n\t\t\t\t\t</execution>\r\n\t\t\t\t\t<execution>\r\n\t\t\t\t\t\t<id>default-testCompile</id>\r\n\t\t\t\t\t\t<phase>test-compile</phase>\r\n\t\t\t\t\t\t<goals>\r\n\t\t\t\t\t\t\t<goal>testCompile</goal>\r\n\t\t\t\t\t\t</goals>\r\n\t\t\t\t\t\t<configuration>\r\n\t\t\t\t\t\t\t<annotationProcessorPaths>\r\n\t\t\t\t\t\t\t\t<path>\r\n\t\t\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t\t\t</path>\r\n\t\t\t\t\t\t\t</annotationProcessorPaths>\r\n\t\t\t\t\t\t</configuration>\r\n\t\t\t\t\t</execution>\r\n\t\t\t\t</executions>\r\n                <configuration>\r\n                    <source>21</source>\r\n                    <target>21</target>\r\n                    <compilerArgs>--enable-preview</compilerArgs>\r\n                </configuration>\r\n            </plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/back-end/pom.xml b/back-end/pom.xml
+--- a/back-end/pom.xml	(revision 1875599f372fb636ade15576de7a6742765971be)
++++ b/back-end/pom.xml	(date 1794562697424)
+@@ -52,6 +52,29 @@
+ 			<version>3.1.0</version>
+ 		</dependency>
+ 
++		<!-- Login: hash de senha (BCrypt) e token JWT -->
++		<dependency>
++			<groupId>org.springframework.security</groupId>
++			<artifactId>spring-security-crypto</artifactId>
++		</dependency>
++		<dependency>
++			<groupId>io.jsonwebtoken</groupId>
++			<artifactId>jjwt-api</artifactId>
++			<version>0.12.6</version>
++		</dependency>
++		<dependency>
++			<groupId>io.jsonwebtoken</groupId>
++			<artifactId>jjwt-impl</artifactId>
++			<version>0.12.6</version>
++			<scope>runtime</scope>
++		</dependency>
++		<dependency>
++			<groupId>io.jsonwebtoken</groupId>
++			<artifactId>jjwt-gson</artifactId>
++			<version>0.12.6</version>
++			<scope>runtime</scope>
++		</dependency>
++
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-devtools</artifactId>
+@@ -140,4 +163,4 @@
+ 		</plugins>
+ 	</build>
+ 
+-</project>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n    <mapping directory=\"$PROJECT_DIR$/front-end\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 1875599f372fb636ade15576de7a6742765971be)
++++ b/.idea/vcs.xml	(date 1794562999196)
+@@ -2,6 +2,5 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-    <mapping directory="$PROJECT_DIR$/front-end" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: back-end/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=trampoja-api\r\n\r\nspring.datasource.url=jdbc:postgresql://localhost:5432/TrampoJa\r\nspring.datasource.username=postgres\r\nspring.datasource.password=${DB_PASSWORD}\r\nspring.datasource.driver-class-name=org.postgresql.Driver\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\nspring.jpa.show-sql=true\r\nspring.jpa.properties.hibernate.format_sql=true
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/back-end/src/main/resources/application.properties b/back-end/src/main/resources/application.properties
+--- a/back-end/src/main/resources/application.properties	(revision 1875599f372fb636ade15576de7a6742765971be)
++++ b/back-end/src/main/resources/application.properties	(date 1794395508286)
+@@ -2,7 +2,8 @@
+ 
+ spring.datasource.url=jdbc:postgresql://localhost:5432/TrampoJa
+ spring.datasource.username=postgres
+-spring.datasource.password=${DB_PASSWORD}
++spring.datasource.password=1234
++# ${DB_PASSWORD}
+ spring.datasource.driver-class-name=org.postgresql.Driver
+ 
+ spring.jpa.hibernate.ddl-auto=update
